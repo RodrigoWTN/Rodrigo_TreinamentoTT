@@ -1,0 +1,25 @@
+#define LedVermelho 2
+#define LedAmarelo 4
+#define LedVerde 6
+
+void setup()
+{
+  pinMode(LedVermelho, OUTPUT);
+  pinMode(LedAmarelo, OUTPUT);
+  pinMode(LedVerde, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(LedVermelho, HIGH);
+  delay(3000); // Wait for 3000 millisecond(s)
+  digitalWrite(LedVermelho, LOW);
+  
+  digitalWrite(LedVerde, HIGH);
+  delay(3000); // Wait for 3000 millisecond(s)
+  digitalWrite(LedVerde, LOW);
+  
+  digitalWrite(LedAmarelo, HIGH);
+  delay(1000); // Wait for 3000 millisecond(s)
+  digitalWrite(LedAmarelo, LOW);
+}
