@@ -1,0 +1,17 @@
+Sensor 	QRE1113 - FairChild
+
+> Temperatura de operação: [-40 ~ +85]°C
+
+> Potência dissipada do sensor: 50 mW
+
+> Corrente no coletor: 20mA
+
+> Tensão máxima de entrada:
+  - 5V emissor;
+  - 5V entre emissor e coletor;
+  - 30V entre coletor e emissor;
+  As duas últimas tensões são escritas desse jeito, por ter um transistor no sensor.
+
+> Dimensões do sensor( altura, largura e comprimento): [1,70 - 1,50 X 4,20 - 3,80 X 3,60 - 3,20] mm
+
+> Corrente normalizada no coletor quando a distância entre o sensor e o objeto é 3mm: Em torno de 0,2 mA - acredito que seja mA por comparação com outro gráfico e da   tabela de máximos valores de operação, no gráfico que tem a informação está faltando a unidade de medida.
