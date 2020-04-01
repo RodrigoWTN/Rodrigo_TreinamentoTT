@@ -1,0 +1,21 @@
+#define LedVermelho 6
+
+int brilho = 0;
+int fade = 5;
+
+void setup()
+{
+  pinMode(LedVermelho, OUTPUT);
+}
+
+void loop()
+{
+  analogWrite(LedVermelho, brilho);
+  brilho = brilho + fade;
+  
+  if (brilho <= 0 || brilho >= 255)
+  {
+    fade = - fade;
+  }
+  delay(30);
+}
