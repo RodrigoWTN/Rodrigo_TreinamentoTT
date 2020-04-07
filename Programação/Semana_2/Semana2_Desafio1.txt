@@ -1,0 +1,22 @@
+#define chave 2
+#define led 13
+
+void setup()
+{
+  pinMode(led, OUTPUT);
+  pinMode(chave, INPUT_PULLUP);
+  
+  digitalWrite(led, LOW);
+}
+
+void loop()
+{
+  if (digitalRead(chave)==HIGH)
+  {
+    digitalWrite(led,HIGH);
+  }
+  else
+  {
+    digitalWrite(led,LOW);
+  } 
+}

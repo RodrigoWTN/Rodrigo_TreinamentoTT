@@ -1,0 +1,22 @@
+#define led 13
+
+unsigned long anterior=0;
+int intervalo=1000;
+
+void setup()
+{
+  pinMode(led, OUTPUT);
+}
+
+void loop()
+{
+  unsigned long atual = millis();
+  
+  if (atual-anterior >= intervalo){
+    anterior = atual;
+    
+    digitalWrite(led,HIGH);
+  }
+
+  digitalWrite(led,LOW);  
+}

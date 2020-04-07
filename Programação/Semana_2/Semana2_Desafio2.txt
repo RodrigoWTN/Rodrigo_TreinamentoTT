@@ -1,0 +1,17 @@
+#define pot 0
+#define led 9
+
+int valor=0;
+int brilho=0;
+
+void setup()
+{
+  pinMode(led, OUTPUT);
+}
+
+void loop()
+{
+  valor = analogRead(pot);
+  brilho = map(valor,0,1023,0,255);
+  analogWrite(led,brilho);
+}
