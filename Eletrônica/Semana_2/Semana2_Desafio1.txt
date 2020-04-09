@@ -1,0 +1,11 @@
+O TMP36 é um sensor que tem como finalidade a medição de temperatura no ambiente, ou seja, um sensor de temperatura. Ele funciona em baixas tensões com alta precisão, tendo uma tensão de sáida linearmente proporcional a temperatura em graus celsius, além de não precisar de calibração externa para certas faixas de temperaturas. Sua saída é em sinais analógicos.
+
+O fator de escala do sensor é de 10mV/°C, sendo uma base para prever a tensão de saída que será captada pelo microcontrolador escolhido.
+
+A precisão do sensor é de +/- 2°C na sua faixa de operação e de +/- 1°C na temperatura de 25°C; o dado de precisão é colocado para o leitor do datasheet ter conhecimento que a temperatura real que o sensor mediu pode ter essa diferença de valores, em relaçao ao valor que foi mostrado, já que nenhuma medida é totalmente certa.
+
+A temperatura operacional siginifica que após variados testes nas fábricas do fornecedor, no momento em que se está criando esse produto, percebeu-se que o sensor não funcionará da maneira correta ou irá parar de funcionar se ele for colocado em temperaturas fora da faixa colocada; no caso do TMP36 a faixa de temperatura operacional é de -40°C~125°C, com precisão de +/- 2°C.
+
+O fator de escala de um componente é o rresultado de um cálculo feito em experimentos com o componente para demonstrar a diferença entre os valores reais e medidos pelo sensor, em suas curvas de medição. Como o TMP36 é linearmente proporcional, as curvas do gráfico deveriam ser lineares, mas como não são exatamente desse jeito, existe essse número de linearidade para dizer ao leitor a diferença máxima entre as curvas reais e ideais; para o TMP36 a linearidade é de 0,5°C.
+
+Algumas aplicações para o TMP36 são em sensores de temperatura de dispositivos ou ambientes, tanto para serem termômetros, como para sistemas de alarme/emergência em ambientes ou circuitos; assim podendo acionar um protocolo para dispara algo para esfriar tal componente ou em um dispositivo que irá parar de funcionar sse não diminuir sua temperatura.
