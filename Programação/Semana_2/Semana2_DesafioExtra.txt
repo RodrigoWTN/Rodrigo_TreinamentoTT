@@ -1,0 +1,89 @@
+#define vermelho 9
+#define verde 7
+#define amarelo 4
+#define botao 2
+
+int contador = 10;
+boolean atual=LOW;
+boolean anterior = LOW;
+
+void setup()
+{
+  pinMode(vermelho,OUTPUT);
+  pinMode(verde,OUTPUT);
+  pinMode(amarelo,OUTPUT);
+  
+  pinMode(botao,INPUT);
+}
+
+void loop()
+{
+  atual=digitalRead(botao);
+  if(atual && !anterior){
+    contador++;
+    
+    if(contador>7){
+      contador=0;
+    }
+    
+  }
+  anterior=atual;
+  
+  switch(contador){
+    
+    case 0:
+      digitalWrite(vermelho,LOW);
+      digitalWrite(verde,LOW);
+      digitalWrite(amarelo,LOW);
+    break;
+    
+    case 1:
+      digitalWrite(vermelho,LOW);
+      digitalWrite(verde,LOW);
+      digitalWrite(amarelo,HIGH);
+    break;
+    
+    case 2:
+      digitalWrite(vermelho,LOW);
+      digitalWrite(verde,HIGH);
+      digitalWrite(amarelo,LOW);
+    break;
+    
+    case 3:
+      digitalWrite(vermelho,LOW);
+      digitalWrite(verde,HIGH);
+      digitalWrite(amarelo,HIGH);
+    break;
+    
+    case 4:
+      digitalWrite(vermelho,HIGH);
+      digitalWrite(verde,LOW);
+      digitalWrite(amarelo,LOW);
+    break;
+    
+    case 5:
+      digitalWrite(vermelho,HIGH);
+      digitalWrite(verde,LOW);
+      digitalWrite(amarelo,HIGH);
+    break;
+    
+    case 6:
+      digitalWrite(vermelho,HIGH);
+      digitalWrite(verde,HIGH);
+      digitalWrite(amarelo,LOW);
+    break;
+      
+    case 7:
+      digitalWrite(vermelho,HIGH);
+      digitalWrite(verde,HIGH);
+      digitalWrite(amarelo,HIGH);
+    break;
+    
+    default:
+      digitalWrite(vermelho,LOW);
+      digitalWrite(verde,LOW);
+      digitalWrite(amarelo,LOW);
+    break;
+    
+    }
+}

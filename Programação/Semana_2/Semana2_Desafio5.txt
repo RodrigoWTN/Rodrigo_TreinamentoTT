@@ -1,0 +1,20 @@
+int leds[] = {4,7,9,13};
+int contador = 0;
+
+void setup() {
+ for (contador = 0; contador < 4; contador++) {
+   pinMode(leds[contador], OUTPUT);
+ }
+}
+void loop() {
+  
+  for (contador = 0; contador < 4; contador++) {
+    digitalWrite(leds[contador], HIGH);
+    delay(1000);
+  }
+  
+  for (contador = 3; contador > -1; contador--) {
+    digitalWrite(leds[contador], LOW);
+    delay(1000);
+  }  
+}
