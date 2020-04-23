@@ -1,0 +1,26 @@
+#define pir 2
+#define buzzer 8
+
+int sensor = 0;
+
+void setup(){
+  
+  pinMode(pir, INPUT);
+  pinMode(buzzer, OUTPUT);
+  
+}
+
+void loop(){
+  
+  sensor = digitalRead(pir);
+  
+  if(sensor == 1)
+  {
+    tone(buzzer,1500,1000);
+    delay(1000);
+  }  
+  else
+  {
+    noTone(buzzer);
+  }
+}
