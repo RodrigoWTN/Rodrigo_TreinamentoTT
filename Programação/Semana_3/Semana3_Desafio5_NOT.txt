@@ -1,0 +1,26 @@
+#define chaveA 2
+#define led 7
+
+
+void setup(){
+  
+  pinMode(chaveA, INPUT);
+  pinMode(led, OUTPUT);
+  
+}
+
+void loop(){
+  
+  boolean A = digitalRead(chaveA);
+  
+  if(!A)
+  {
+    digitalWrite(led,HIGH);
+  }
+  else
+  {
+    digitalWrite(led,LOW);
+  }
+  
+}
+

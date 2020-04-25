@@ -1,0 +1,67 @@
+#define chaveA 3
+#define chaveB 2
+#define led 7
+#define buzzer 8
+#define pir 9
+
+int intervalo = 100;
+unsigned long atual;
+unsigned long anterior = 0;
+bool ledState = LOW;  
+
+void setup(){
+  
+  pinMode(chaveA, INPUT);
+  pinMode(chaveB, INPUT);
+  pinMode(pir, INPUT);
+  
+  pinMode(led, OUTPUT);  
+  pinMode(buzzer, OUTPUT);
+  Serial.begin(9600);
+  
+}
+
+void loop(){
+  
+  boolean A = digitalRead(chaveA);
+  boolean B = digitalRead(chaveB);
+  int sensor = 0;
+  boolean presenca = false;
+  
+  atual = millis();
+  sensor = digitalRead(pir);
+  
+  if(sensor == 1)
+  {
+    presenca = true;
+    
+    if(presenca == true)
+    {
+      tone(buzzer,1500);
+      
+      if (atual-anterior > intervalo)
+      {
+        anterior = atual;  
+      
+        if (ledState == LOW)
+        {
+          ledState = HIGH;
+        }
+        else ledState = LOW;
+      
+        digitalWrite(led, ledState);
+      } 
+    }
+      
+  }
+  
+  if(A && B)
+    {
+      noTone(buzzer);
+     
+      digitalWrite(led,LOW);
+      
+      presenca = false;
+  }
+}
+
