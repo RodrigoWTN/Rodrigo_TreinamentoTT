@@ -1,0 +1,13 @@
+O LM555 é um circuito intergrado contendo em seu interioro um flip flop, dois comparadores, um trasnitor de descarga e um divisor de tensão de 3 resistores de 5K ohms; ele tem 8 terminais com 4 pinos em cada lado.
+
+Ele tem como finalidade a criação de clocks, pulsos de frequência configurável, além de funcionar de 3 modos diferentes, astável, monoestável e biestável.
+
+O LM555 pode ser usado como osciladores, disparadores de sinais, flip flop, led pisca pisca, comandos em período determinado após acionamento de botão.
+
+No modo monoestável, o componente é usado como disparador de sinais, o funcionamento é feito após a alimentação do circuito interno, com uma tensão abaixo de 1/3Vcc, próximo a 0, após o circuito receber um pulso, o capacitor carrega para 2/3Vcc, para depois ir descarregando conforme a frequência(tempo) determinada por um cálculo até chegar a 1/3Vcc e o pulso de sáida acabe.
+
+Time delay = Próximo de 1s
+
+T = 0,693*(R1 + 2*R2)*C
+R1 e R2 = resistores;
+C = capacitor
