@@ -1,0 +1,3 @@
+O circuito tem os 7 botões alinhados com a nota dó sendo o primeiro botão a esquerda.
+A resistência equivalente utilizada para conseguir a nota d[o é igual a 41.6K ohm, diminuindo conforme a nota. O resistor base para o circuito que chega ao 555 é de 6.8K ohm.
+O 555 está configurado no modo ástavel.
