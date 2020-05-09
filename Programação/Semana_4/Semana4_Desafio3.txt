@@ -1,0 +1,24 @@
+#include <Servo.h>
+
+Servo motor;
+int posicao = 0;
+
+void setup()
+{
+  motor.attach(9);
+}
+
+void loop()
+{
+  for(posicao = 0; posicao<=180; posicao++){
+    motor.write(posicao);
+    delay(10);
+  }
+  
+  delay(2000);
+  
+  for(posicao = 180; posicao>=1; posicao--){
+    motor.write(posicao);
+    delay(10);
+  }
+}

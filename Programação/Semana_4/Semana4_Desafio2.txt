@@ -1,0 +1,1 @@
+A função attach() da biblioteca servo.h é utilizada para associar a localização do servo motor com uma das entradas do microcontrolador utilizado, através da variável utilizada para o motor, sendo que para cada motor utilizado deve-se declarar cada pino de entrada com uma função attach() respectiva.
