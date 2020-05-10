@@ -1,0 +1,80 @@
+#include <IRremote.h>
+#define sinal 13
+#define motor1 11
+#define motor2 10
+
+IRrecv receptor(9);
+decode_results resultado;
+
+boolean tecla = LOW;
+long tempo, atual;
+float minimo = 200;
+float max = 10;
+
+void setup()
+{
+  Serial.begin(9600);
+  receptor.enableIRIn();
+}
+
+void loop()
+{
+  float dist=0;
+  
+  if (receptor.decode(&resultado)) 
+  {
+    Serial.println(resultado.value, HEX);
+    
+    if(resultado.value == 0xFD08F7)
+    {
+      tecla = !tecla;
+      while(millis()<2000){
+        pinMode(sinal, OUTPUT);
+        digitalWrite(sinal, LOW);
+        delayMicroseconds(2);
+        digitalWrite(sinal, HIGH);
+        delayMicroseconds(5);
+        digitalWrite(sinal, LOW);
+  
+        pinMode(sinal, INPUT);
+        tempo = pulseIn(sinal, HIGH);
+
+        atual = tempo/29/2;
+  
+        if(atual<minimo){
+          minimo = atual;
+        }
+  
+        if(atual>max){
+          max = atual;
+        }
+      }
+      
+      analogWrite(motor1,100);
+      analogWrite(motor2,100);
+      
+      pinMode(sinal, OUTPUT);
+      digitalWrite(sinal, LOW);
+      delayMicroseconds(2);
+      digitalWrite(sinal, HIGH);
+      delayMicroseconds(5);
+      digitalWrite(sinal, LOW);
+  
+      pinMode(sinal, INPUT);
+      tempo = pulseIn(sinal, HIGH);
+
+      atual = tempo/29/2;
+  
+      dist = map(dist,4,335,minimo,max);
+      dist = constrain(atual,minimo,max);
+            
+
+      if(dist<50){
+        digitalWrite(motor1,HIGH);
+        digitalWrite(motor2,HIGH);
+      }
+    }
+  receptor.resume();
+  }
+  delay(100);
+}
