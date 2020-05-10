@@ -1,0 +1,27 @@
+#include <Servo.h>
+
+#define led 2
+#define botao 10
+
+Servo motor;
+
+void setup()
+{
+  motor.attach(9);
+  pinMode(led, OUTPUT);
+  pinMode(botao, INPUT_PULLUP);
+  
+}
+
+void loop()
+{
+  if(digitalRead(botao)==LOW){
+    digitalWrite(led,HIGH);
+    motor.write(90);
+  }
+  
+  else{
+    digitalWrite(led,LOW);
+    motor.write(0);
+  }
+}

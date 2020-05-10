@@ -1,0 +1,66 @@
+#define sinal 6
+
+long tempo, atual;
+float minimo = 200;
+float max = 10;
+
+void setup() {
+  Serial.begin(1200);  
+  
+  while(millis()<2000){
+    pinMode(sinal, OUTPUT);
+    digitalWrite(sinal, LOW);
+    delayMicroseconds(2);
+    digitalWrite(sinal, HIGH);
+    delayMicroseconds(5);
+    digitalWrite(sinal, LOW);
+  
+    pinMode(sinal, INPUT);
+    tempo = pulseIn(sinal, HIGH);
+
+    atual = tempo/29/2;
+  
+    if(atual<minimo){
+      minimo = atual;
+    }
+  
+    if(atual>max){
+      max = atual;
+    }
+  }
+}
+
+void loop() {
+  float dist=0;
+  
+  pinMode(sinal, OUTPUT);
+  digitalWrite(sinal, LOW);
+  delayMicroseconds(2);
+  digitalWrite(sinal, HIGH);
+  delayMicroseconds(5);
+  digitalWrite(sinal, LOW);
+  
+  pinMode(sinal, INPUT);
+  tempo = pulseIn(sinal, HIGH);
+
+  atual = tempo/29/2;
+  
+  dist = map(dist,4,335,minimo,max);
+  dist = constrain(atual,minimo,max);
+
+  Serial.print("Distance: ");
+  Serial.print(dist);
+  Serial.print("cm");
+  Serial.println();
+  
+  Serial.print("Minimo: ");
+  Serial.print(minimo);
+  Serial.print("cm");
+  Serial.println();
+  
+  Serial.print("Maximo: ");
+  Serial.print(max);
+  Serial.print("cm");
+  Serial.println();
+
+}

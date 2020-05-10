@@ -1,0 +1,53 @@
+#include <IRremote.h>
+
+#define vermelho 8
+#define verde 7
+#define azul 6
+
+IRrecv receptor(12);
+decode_results resultado;
+
+int tecla = 0;
+boolean estadoVermelho = LOW;
+boolean estadoVerde = LOW;
+boolean estadoAzul = LOW;
+
+void setup()
+{
+  Serial.begin(9600);
+  receptor.enableIRIn();
+  
+  pinMode(vermelho,OUTPUT);
+  pinMode(verde,OUTPUT);
+  pinMode(azul,OUTPUT);
+}
+
+void loop()
+{
+  if (receptor.decode(&resultado)) 
+  {
+    Serial.println(resultado.value, HEX);
+  
+    tecla = resultado.value;
+  
+    switch(tecla)
+    {
+      case(0xFD08F7):
+      estadoVermelho = !estadoVermelho;
+      digitalWrite(vermelho,estadoVermelho);
+      break;
+    
+      case(0xFD8877):
+      estadoVerde = !estadoVerde;
+      digitalWrite(verde,estadoVerde);
+      break;
+    
+      case(0xFD48B7):
+      estadoAzul = !estadoAzul;
+      digitalWrite(azul,estadoAzul);
+      break;
+    }
+  receptor.resume();
+  }
+  delay(100);
+}
