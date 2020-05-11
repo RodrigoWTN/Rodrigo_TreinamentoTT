@@ -1,0 +1,14 @@
+-1 Arduino Nano - http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf ou http://www.farnell.com/datasheets/1682238.pdf
+
+-1 bateria lipo 2s 7,4V 
+-1 regulador de tensão LM7805 - https://www.sparkfun.com/datasheets/Components/LM7805.pdf
+-1 capacitor 0,33uF
+-1 capacitor 0,1uF
+
+-1 ponte H TB6612FNG- https://www.pololu.com/file/0J86/TB6612FNG.pdf
+-2 motores
+
+-2 sensores Sharp GP2Y0A21YK0F - https://www.sparkfun.com/datasheets/Components/GP2Y0A21YK.pdf
+
+-1 led verde
+-1 resistor de 360R
